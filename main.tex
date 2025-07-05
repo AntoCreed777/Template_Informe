@@ -1,0 +1,112 @@
+\documentclass[12pt, letterpaper]{article}
+
+%%%% --------------------------------------------------
+%%%% PAQUETES BÁSICOS DE CONFIGURACIÓN DE TEXTO
+%%%% --------------------------------------------------
+
+\usepackage[utf8]{inputenc}       % Codificación UTF-8
+\usepackage[spanish]{babel}       % Idioma español
+\usepackage{csquotes}             % Compatibilidad de idioma con biblatex
+\usepackage{xurl}                 % Para cortar URLs largas automáticamente
+
+%%%% --------------------------------------------------
+%%%% PAQUETES PARA MATEMÁTICAS
+%%%% --------------------------------------------------
+
+\usepackage{amsmath, amssymb}     % Símbolos y entorno matemático
+
+%%%% --------------------------------------------------
+%%%% PAQUETES PARA IMÁGENES Y FIGURAS
+%%%% --------------------------------------------------
+
+\usepackage{graphicx}             % Incluir imágenes
+\graphicspath{{figures/}}         % Carpeta predeterminada para imágenes
+\usepackage{caption}              % Captions en minipages
+\usepackage{float}                % Control de posición de figuras/tablas
+
+%%%% --------------------------------------------------
+%%%% PAQUETES PARA TABLAS
+%%%% --------------------------------------------------
+
+\usepackage{array}                % Mejoras en tablas
+\usepackage{multirow}            % Filas múltiples
+\usepackage{multicol}            % Columnas múltiples
+
+%%%% --------------------------------------------------
+%%%% PAQUETES PARA ENCABEZADOS Y PIE DE PÁGINA
+%%%% --------------------------------------------------
+
+\usepackage{fancyhdr}             % Personalizar encabezados/pies
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{ENCABEZADO}         % Izquierda
+\fancyhead[R]{\thepage}           % Derecha
+\fancyfoot[C]{\leftmark}          % Centro
+\setlength{\headheight}{14.5pt}   % Altura de encabezado
+
+%%%% --------------------------------------------------
+%%%% PAQUETES PARA HIPERVÍNCULOS Y PDF
+%%%% --------------------------------------------------
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=magenta,
+    filecolor=magenta,
+    urlcolor=magenta,
+    pdftitle={Bases de Datos - Hito 1},
+    pdfpagemode=FullScreen,
+}
+
+%%%% --------------------------------------------------
+%%%% PAQUETES PARA BIBLIOGRAFÍA
+%%%% --------------------------------------------------
+
+\usepackage[backend=biber, style=ieee]{biblatex}
+\addbibresource{referencias.bib}
+
+%%%% --------------------------------------------------
+%%%% OTROS PAQUETES ÚTILES
+%%%% --------------------------------------------------
+
+\usepackage{comment}              % Comentar bloques grandes
+\usepackage{geometry}             % Márgenes
+
+%%%% --------------------------------------------------
+%%%% CONFIGURACIONES DE FORMATO
+%%%% --------------------------------------------------
+
+\geometry{
+    top=2cm,
+    bottom=2cm,
+    left=2.5cm,
+    right=2.5cm,
+    heightrounded,
+    bindingoffset=0.5cm
+}
+
+\setlength{\parskip}{1em}         % Espacio entre párrafos
+\setlength{\parindent}{1.5em}     % Sangría de párrafo
+\setlength\emergencystretch{3em}  % Evita overflow de líneas
+
+%%%% --------------------------------------------------
+%%%% DOCUMENTO
+%%%% --------------------------------------------------
+
+\begin{document}
+
+    \include{portada}
+    \tableofcontents              % Índice general
+
+    \include{introduccion}
+    
+    % Aquí puedes incluir más secciones con \include{}
+
+    \include{conclusion}
+
+    \printbibliography[
+        heading=bibintoc,
+        title={Bibliografía}
+    ]
+
+\end{document}
