@@ -149,6 +149,35 @@ Modifica en `main.tex`:
 \end{align}
 ```
 
+### Crear Recuadros Destacados (tcolorbox)
+
+```latex
+\hspace{1cm}
+\begin{tcolorbox}[
+    colback=blue!10, 
+    colframe=blue!60, 
+    coltitle=black, 
+    title={Título del Recuadro}, 
+    fonttitle=\bfseries, 
+    boxrule=1mm, 
+    arc=4mm, 
+    left=2mm, 
+    right=2mm, 
+    top=2mm, 
+    bottom=2mm
+]
+    Aquí puedes agregar texto destacado, observaciones importantes, 
+    retroalimentación, notas especiales o cualquier contenido que 
+    necesite ser resaltado visualmente en el documento.
+\end{tcolorbox}
+\hspace{1cm}
+```
+
+**Personalización de colores:**
+- `colback=color!10`: Color de fondo (ej: `red!10`, `green!10`, `yellow!10`)
+- `colframe=color!60`: Color del borde (ej: `red!60`, `green!60`, `yellow!60`)
+- `title={Texto}`: Título del recuadro
+
 ### Agregar Referencias
 
 ```latex
@@ -188,6 +217,7 @@ La ecuación \eqref{eq:einstein} representa...
 - **`fancyhdr`**: Encabezados y pie de página personalizados
 - **`hyperref`**: Hipervínculos internos y externos
 - **`geometry`**: Control preciso de márgenes y layout
+- **`tcolorbox`**: Recuadros personalizados para destacar texto o secciones específicas
 
 ## 🎯 Casos de Uso Ideales
 
