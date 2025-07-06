@@ -33,18 +33,6 @@
 \usepackage{multicol}            % Columnas múltiples
 
 %%%% --------------------------------------------------
-%%%% PAQUETES PARA ENCABEZADOS Y PIE DE PÁGINA
-%%%% --------------------------------------------------
-
-\usepackage{fancyhdr}             % Personalizar encabezados/pies
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{ENCABEZADO}         % Izquierda
-\fancyhead[R]{\thepage}           % Derecha
-\fancyfoot[C]{\leftmark}          % Centro
-\setlength{\headheight}{14.5pt}   % Altura de encabezado
-
-%%%% --------------------------------------------------
 %%%% PAQUETES PARA HIPERVÍNCULOS Y PDF
 %%%% --------------------------------------------------
 
@@ -89,6 +77,18 @@
 \setlength{\parskip}{1em}         % Espacio entre párrafos
 \setlength{\parindent}{1.5em}     % Sangría de párrafo
 \setlength\emergencystretch{3em}  % Evita overflow de líneas
+
+%%%% --------------------------------------------------
+%%%% PAQUETES PARA ENCABEZADOS Y PIE DE PÁGINA
+%%%% --------------------------------------------------
+
+\usepackage{fancyhdr}             % Personalizar encabezados/pies
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{ENCABEZADO}         % Izquierda
+\fancyhead[R]{\thepage}           % Derecha
+\fancyfoot[C]{\leftmark}          % Centro
+\setlength{\headheight}{14.5pt}   % Altura de encabezado
 
 %%%% --------------------------------------------------
 %%%% DOCUMENTO
