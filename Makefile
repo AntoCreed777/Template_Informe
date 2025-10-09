@@ -2,10 +2,14 @@ PDF=informe.pdf
 OUTDIR=aux
 MAIN=main.tex
 
-.PHONY: all clean open
+.PHONY: all log clean open
 
 all:
 	latexmk -pdf -jobname=$(basename $(PDF)) -outdir=$(OUTDIR) $(MAIN)
+
+log:
+	@grep "Warning" ./aux/informe.log || true
+	@grep "Error" ./aux/informe.log || true
 
 clean:
 	latexmk -C -outdir=$(OUTDIR)
