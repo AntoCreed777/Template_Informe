@@ -61,6 +61,12 @@ make
 ```
 El PDF generado estará en la carpeta `aux/` como `informe.pdf`.
 
+Para mostrar los `Warning` y `Error`:
+
+```bash
+make log
+```
+
 Para eliminar los archivos auxiliares:
 ```bash
 make clean
@@ -80,6 +86,12 @@ Esto abrirá el archivo `aux/informe.pdf` con el visor predeterminado de tu sist
 Compilar el PDF:
 ```bash
 latexmk -pdf -jobname=informe -outdir=aux main.tex
+```
+
+Mostrar los `Warning` y `Error`:
+```bash
+grep "Warning" ./aux/informe.log || true
+grep "Error" ./aux/informe.log || true
 ```
 
 Eliminar los archivos auxiliares:
