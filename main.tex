@@ -1,23 +1,59 @@
 \documentclass[12pt, letterpaper]{article}
 
+%========================================
+% Inclusión y configuración de paquetes
+%========================================
 \input{packages}
 
-%%%% --------------------------------------------------
-%%%% DOCUMENTO
-%%%% --------------------------------------------------
-
+%========================================
+% Inicio del documento
+%========================================
 \begin{document}
 
+    %======================
+    % Portada del documento
+    %======================
     \include{portada}
-    \tableofcontents              % Índice general
+
+    %============================================
+    % Numeración romana para secciones preliminares
+    %============================================
+    \pagenumbering{roman}  % i, ii, iii, ... para las secciones preliminares (resumen, índices, etc)
+
+    %====================================
+    % Resumen (máximo una página)
+    %====================================
+    \include{resumen}
+    
+    %====================================
+    % Índices del documento
+    %====================================
+    \tableofcontents   % Índice de contenidos
+    \listoftables      % Índice de tablas
+    \listoffigures     % Índice de figuras
+
+    %====================================
+    % Cuerpo principal del documento
+    %====================================
+    \clearpage          % Asegura que el cambio de numeración no interfiera con lo anterior
+    \pagenumbering{arabic} % Numeración normal: 1, 2, 3, ...
 
     \include{seccion}
     
-    % Aquí puedes incluir más secciones con \include{}
+    % Aquí se pueden agregar más secciones con \include{}
 
+    %====================================
+    % Referencias bibliográficas
+    %====================================
     \printbibliography[
-        heading=bibintoc,
-        title={Bibliografía}
+        heading=bibintoc,  % Incluye la bibliografía en el índice
+        title={Bibliografía}  % Título de la sección
     ]
+
+    %====================================
+    % Apéndices
+    %====================================
+    \appendix  % Cambia la numeración de secciones a letras (A, B, C, ...)
+    \include{anexos}
 
 \end{document}
