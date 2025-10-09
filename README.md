@@ -51,16 +51,46 @@ Para compilar este informe en Linux, primero instala la distribución completa d
 sudo apt install texlive-full
 ```
 
-Luego, desde la raíz del proyecto, ejecuta:
+### Usando Makefile
 
+Puedes compilar y limpiar el proyecto fácilmente usando el Makefile:
+
+Para compilar el PDF:
+```bash
+make
+```
+El PDF generado estará en la carpeta `aux/` como `informe.pdf`.
+
+Para eliminar los archivos auxiliares:
+```bash
+make clean
+```
+Esto dejará solo el PDF y los archivos fuente.
+
+Para abrir el PDF generado directamente:
+```bash
+make open
+```
+Esto abrirá el archivo `aux/informe.pdf` con el visor predeterminado de tu sistema.
+
+**Nota:** Las reglas del Makefile (`all`, `clean`, `open`) están declaradas como `.PHONY`, lo que significa que no dependen de archivos y pueden ejecutarse en cualquier momento.
+
+### Comandos manuales equivalentes al Makefile
+
+Compilar el PDF:
 ```bash
 latexmk -pdf -jobname=informe -outdir=aux main.tex
 ```
 
-Esto generará el archivo PDF a partir de `main.tex`, el cual incluirá automáticamente todas las secciones y archivos necesarios.
+Eliminar los archivos auxiliares:
+```bash
+latexmk -C -outdir=aux
+```
 
-El archivo PDF generado (`informe.pdf`) se encontrará dentro de la carpeta `aux/` junto con los archivos auxiliares.
-
+Abrir el PDF generado:
+```bash
+xdg-open aux/informe.pdf
+```
 
 ## 📝 Personalización
 
