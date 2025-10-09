@@ -19,6 +19,7 @@ Template para crear informes académicos y técnicos en LaTeX
 ## 📋 Tabla de Contenidos
 
 - [📁 Estructura del Proyecto](#-estructura-del-proyecto)
+- [Compilación en Linux](#compilación-en-linux)
 - [📝 Personalización](#-personalización)
 - [🎨 Ejemplos de Uso](#-ejemplos-de-uso)
 - [📚 Paquetes Incluidos](#-paquetes-incluidos)
@@ -30,14 +31,34 @@ Template para crear informes académicos y técnicos en LaTeX
 ```
 Template_Informe/
 ├── main.tex           # 📄 Archivo principal con configuración
+├── packages.tex       # 📦 Archivo con los paquetes y configuraciones de LaTeX
 ├── portada.tex        # 🏠 Portada personalizable del informe
-├── introduccion.tex   # 📖 Sección de introducción
-├── conclusion.tex     # 🎯 Sección de conclusión
+├── seccion.tex        # 📖 Sección de ejemplo
 ├── referencias.bib    # 📚 Bibliografía en formato BibTeX
 ├── figures/           # 🖼️ Carpeta para figuras e imágenes
 │   └── udec_logo.png  # 🎓 Logo de la universidad
-└── README.md          # 📋 Documentación del template
+├── README.md          # 📋 Documentación del template
+└── LICENSE            # 📄 Licencia del proyecto
 ```
+
+## Compilación en Linux
+
+Para compilar este informe en Linux, primero instala la distribución completa de LaTeX:
+
+```bash
+sudo apt install texlive-full
+```
+
+Luego, desde la raíz del proyecto, ejecuta:
+
+```bash
+latexmk -pdf -jobname=informe -outdir=aux main.tex
+```
+
+Esto generará el archivo PDF a partir de `main.tex`, el cual incluirá automáticamente todas las secciones y archivos necesarios.
+
+El archivo PDF generado (`informe.pdf`) se encontrará dentro de la carpeta `aux/` junto con los archivos auxiliares.
+
 
 ## 📝 Personalización
 
