@@ -34,6 +34,8 @@ Template_Informe/
 ├── packages.tex       # 📦 Archivo con los paquetes y configuraciones de LaTeX
 ├── portada.tex        # 🏠 Portada personalizable del informe
 ├── seccion.tex        # 📖 Sección de ejemplo
+├── resumen.tex        # 📝 Resumen del informe
+├── anexos.tex         # 📎 Sección de anexos
 ├── referencias.bib    # 📚 Bibliografía en formato BibTeX
 ├── figures/           # 🖼️ Carpeta para figuras e imágenes
 │   └── udec_logo.png  # 🎓 Logo de la universidad
