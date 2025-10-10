@@ -18,28 +18,46 @@ Template para crear informes académicos y técnicos en LaTeX
 
 ## 📋 Tabla de Contenidos
 
-- [📁 Estructura del Proyecto](#-estructura-del-proyecto)
-- [Compilación en Linux](#compilación-en-linux)
-- [📝 Personalización](#-personalización)
-- [📚 Paquetes Incluidos](#-paquetes-incluidos)
-- [🤝 Contribuciones](#-contribuciones)
-- [📄 Licencia](#-licencia)
+- [📄 Template de Informe LaTeX](#-template-de-informe-latex)
+  - [👥 Autor](#-autor)
+  - [📋 Tabla de Contenidos](#-tabla-de-contenidos)
+  - [📁 Estructura del Proyecto](#-estructura-del-proyecto)
+  - [Compilación en Linux](#compilación-en-linux)
+    - [Usando Makefile](#usando-makefile)
+    - [Comandos manuales equivalentes al Makefile](#comandos-manuales-equivalentes-al-makefile)
+  - [📝 Personalización y Paquetes](#-personalización-y-paquetes)
+  - [🎯 Casos de Uso Ideales](#-casos-de-uso-ideales)
+  - [🤝 Contribuciones](#-contribuciones)
+    - [Tipos de Contribuciones Bienvenidas](#tipos-de-contribuciones-bienvenidas)
+  - [📄 Licencia](#-licencia)
 
 ## 📁 Estructura del Proyecto
 
 ```
 Template_Informe/
-├── main.tex           # 📄 Archivo principal con configuración
-├── packages.tex       # 📦 Archivo con los paquetes y configuraciones de LaTeX
-├── portada.tex        # 🏠 Portada personalizable del informe
-├── seccion.tex        # 📖 Sección de ejemplo
-├── resumen.tex        # 📝 Resumen del informe
-├── anexos.tex         # 📎 Sección de anexos
-├── referencias.bib    # 📚 Bibliografía en formato BibTeX
-├── figures/           # 🖼️ Carpeta para figuras e imágenes
-│   └── udec_logo.png  # 🎓 Logo de la universidad
-├── README.md          # 📋 Documentación del template
-└── LICENSE            # 📄 Licencia del proyecto
+├── anexos.tex                # 📎 Sección de anexos
+├── aux/                      # 📂 Archivos auxiliares y PDF generado (se crea al compilar con `make`, no está en el repo)
+├── config.tex                # ⚙️ Configuración de paquetes y estilos
+├── examples/                 # 📂 Ejemplos de uso de entornos y comandos
+│   ├── anotaciones_examples.tex
+│   ├── code_examples.tex
+│   ├── figures_examples.tex
+│   ├── lists_examples.tex
+│   ├── math_examples.tex
+│   ├── references_examples.tex
+│   ├── tables_examples.tex
+│   └── tcolorbox_examples.tex
+├── figures/                  # 🖼️ Carpeta para figuras e imágenes
+│   └── udec_logo.png         # 🎓 Logo de la universidad
+├── LICENSE                   # 📄 Licencia del proyecto
+├── main.tex                  # 📄 Archivo principal con configuración
+├── Makefile                  # ⚙️ Automatización de compilación
+├── packages.tex              # 📦 Paquetes y configuraciones de LaTeX
+├── portada.tex               # 🏠 Portada personalizable del informe
+├── README.md                 # 📋 Documentación del template
+├── referencias.bib           # 📚 Bibliografía en formato BibTeX
+├── resumen.tex               # 📝 Resumen del informe
+└── seccion.tex               # 📖 Sección de ejemplo
 ```
 
 ## Compilación en Linux
@@ -103,85 +121,20 @@ Abrir el PDF generado:
 xdg-open aux/informe.pdf
 ```
 
-## 📝 Personalización
 
-### Cambiar la Portada
+## 📝 Personalización y Paquetes
 
-Edita `portada.tex` para personalizar:
+Para detalles sobre los paquetes utilizados y cómo personalizar el documento, revisa los archivos `packages.tex` y `config.tex`. Allí encontrarás todas las configuraciones y opciones disponibles para modificar el estilo, márgenes, encabezados, colores, bibliografía, etc.
 
-```latex
-% Información básica a modificar
-{\huge \textbf{TU TÍTULO AQUÍ}}
-{\Large TU SUBTÍTULO}
-\textbf{Tu Nombre} \\
-\textbf{Segundo Autor (opcional)}
-\normalsize MES AÑO
-```
+Las importaciones incluidas en el template cubren áreas como:
+- Matemáticas y símbolos
+- Tablas y figuras
+- Imágenes
+- Bibliografía
+- Código fuente y pseudocódigo
+- Encabezados, márgenes y personalización visual
 
-### Agregar Nuevas Secciones
-
-1. **Crear archivo**: `desarrollo.tex`, `metodologia.tex`, etc.
-2. **Agregar al main**: `\include{desarrollo}` en `main.tex`
-3. **Estructurar**: Usar `\section{Nombre}` y `\subsection{Subsección}`
-
-### Personalizar Encabezados
-
-Modifica en `main.tex`:
-
-```latex
-\fancyhead[L]{TU ENCABEZADO}      % Izquierda
-\fancyhead[R]{\thepage}           % Derecha (número de página)
-\fancyfoot[C]{\leftmark}          % Centro (nombre de sección)
-```
-
-### Configurar Bibliografía
-
-1. **Agregar referencias** en `referencias.bib`:
-   ```bibtex
-   @article{ejemplo2025,
-     author = {Nombre Autor},
-     title = {Título del Artículo},
-     journal = {Nombre Revista},
-     year = {2025}
-   }
-   ```
-
-2. **Citar en texto**: `\cite{ejemplo2025}`
-3. **Compilar**: El estilo IEEE se aplicará automáticamente
-
-
-## 📚 Paquetes Incluidos
-
-### Configuración Básica
-- **`inputenc`**: Codificación UTF-8 para caracteres especiales
-- **`babel`**: Soporte completo para idioma español
-- **`csquotes`**: Compatibilidad avanzada con biblatex
-- **`xurl`**: Corte automático de URLs largas
-
-### Matemáticas y Símbolos
-- **`amsmath`**: Entornos matemáticos avanzados
-- **`amssymb`**: Símbolos matemáticos adicionales
-
-### Imágenes y Figuras
-- **`graphicx`**: Inclusión y manipulación de imágenes
-- **`caption`**: Captions personalizados en figuras
-- **`float`**: Control preciso de posición de figuras/tablas
-
-### Tablas Avanzadas
-- **`array`**: Mejoras en formato de tablas
-- **`multirow`**: Soporte para filas múltiples
-- **`multicol`**: Soporte para columnas múltiples
-
-### Bibliografía Moderna
-- **`biblatex`**: Sistema moderno de bibliografía
-- **Backend**: `biber` para procesamiento avanzado
-- **Estilo**: `ieee` para formato académico estándar
-
-### Personalización Avanzada
-- **`fancyhdr`**: Encabezados y pie de página personalizados
-- **`hyperref`**: Hipervínculos internos y externos
-- **`geometry`**: Control preciso de márgenes y layout
-- **`tcolorbox`**: Recuadros personalizados para destacar texto o secciones específicas
+Consulta los archivos mencionados para adaptar el template a tus necesidades específicas.
 
 ## 🎯 Casos de Uso Ideales
 
