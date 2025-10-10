@@ -29,6 +29,8 @@
     % Índices del documento
     %====================================
     \tableofcontents   % Índice de contenidos
+
+    \newpage
     \listoftables      % Índice de tablas
     \listoffigures     % Índice de figuras
 
@@ -40,11 +42,22 @@
 
     \include{seccion}
     
+    % Ejemplos segun tema
+    \section{Examples}
+    \input{examples/figures_examples}
+    \input{examples/lists_examples}
+    \input{examples/tables_examples}
+    \input{examples/math_examples}
+    \input{examples/references_examples}
+    \input{examples/tcolorbox_examples}
+    \input{examples/code_examples}
+
     % Aquí se pueden agregar más secciones con \include{}
 
     %====================================
     % Referencias bibliográficas
     %====================================
+    \newpage
     \nocite{*}  % Esto fuerza a incluir TODAS las referencias del archivo .bib
                 % Si no quieres que aparezcan referencias no citadas,
                 % comenta o elimina esta línea
