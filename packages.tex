@@ -16,7 +16,6 @@
 %%%% IMÁGENES Y FIGURAS
 %%%% --------------------------------------------------
 \usepackage{graphicx}             % Permite incluir imágenes (\includegraphics)
-\graphicspath{{figures/}}         % Carpeta predeterminada para imágenes
 \usepackage{caption}              % Configuración de captions en figuras y tablas
 \usepackage{float}                % Permite forzar la posición exacta de figuras/tablas con [H]
 
@@ -38,20 +37,11 @@
 %%%% HIPERVÍNCULOS Y PDF
 %%%% --------------------------------------------------
 \usepackage{hyperref}             % Permite enlaces internos y externos
-\hypersetup{
-    colorlinks=true,              % Links de color (no cajas)
-    linkcolor=magenta,            % Color de links internos
-    filecolor=magenta,            % Color de enlaces a archivos
-    urlcolor=magenta,             % Color de enlaces externos
-    pdftitle={Documento},         % Título del PDF
-    pdfpagemode=UseOutlines,       % Modo de apertura del PDF
-}
 
 %%%% --------------------------------------------------
 %%%% BIBLIOGRAFÍA
 %%%% --------------------------------------------------
 \usepackage[backend=biber, style=ieee]{biblatex}  % Gestión de bibliografía estilo IEEE
-\addbibresource{referencias.bib}                  % Archivo .bib con referencias
 
 %%%% --------------------------------------------------
 %%%% OTROS PAQUETES ÚTILES
@@ -67,37 +57,4 @@
 %%%% --------------------------------------------------
 %%%% CONFIGURACIÓN DE MÁRGENES
 %%%% --------------------------------------------------
-\usepackage{geometry}             % Configuración de márgenes
-\geometry{
-    top=2.5cm,
-    bottom=2cm,
-    left=2.5cm,
-    right=2cm,
-    heightrounded,                % Ajusta altura de página a número entero de líneas
-    bindingoffset=0.5cm           % Espacio extra para encuadernación
-}
-
-%%%% --------------------------------------------------
-%%%% PÁRRAFOS Y ESPACIADO
-%%%% --------------------------------------------------
-\setlength{\parskip}{1em}         % Espacio entre párrafos
-\setlength{\parindent}{1.5em}     % Sangría al inicio de párrafo
-\setlength\emergencystretch{3em}  % Permite estirar líneas largas para evitar overflow
-
-%%%% --------------------------------------------------
-%%%% ENCABEZADOS Y PIES
-%%%% --------------------------------------------------
-\pagestyle{fancy}                 % Estilo de página fancy
-\fancyhf{}                        % Limpiar encabezados y pies
-\fancyhead[L]{ENCABEZADO}         % Encabezado izquierda
-\fancyhead[R]{\thepage}           % Encabezado derecha: número de página
-\fancyfoot[C]{\leftmark}          % Pie de página: nombre de la sección actual
-\setlength{\headheight}{14.5pt}   % Altura del encabezado
-
-%%%% --------------------------------------------------
-%%%% TITULOS DE SECCIÓN PERSONALIZADOS
-%%%% --------------------------------------------------
-\titleformat{\section}
-{\bfseries\large}{\thesection. }{0pt}{}      % Formato de \section
-\titleformat{\subsection}
-{\bfseries}{\thesubsection. }{0pt}{}         % Formato de \subsection
+\usepackage{geometry}             % Permite configurar márgenes

@@ -1,0 +1,159 @@
+
+% =====================================================
+% CONFIGURACIONES DE PAQUETES Y AJUSTES DEL DOCUMENTO
+% =====================================================
+
+% -----------------------------
+% Idioma y codificación
+% -----------------------------
+% --- Configuración para babel ---
+% Puedes cambiar el idioma principal o agregar otros
+\selectlanguage{spanish} % Selecciona español como idioma principal
+
+% -----------------------------
+% Márgenes y geometría
+% -----------------------------
+% --- Configuración para geometry ---
+% Define los márgenes y dimensiones de la página
+\geometry{
+    top=2.5cm,            % Margen superior
+    bottom=2cm,           % Margen inferior
+    left=2.5cm,           % Margen izquierdo
+    right=2cm,            % Margen derecho
+    heightrounded,        % Redondea la altura útil de la página
+    bindingoffset=0.5cm   % Espacio extra para encuadernación
+}
+
+% -----------------------------
+% Encabezados y pies de página
+% -----------------------------
+% --- Configuración para fancyhdr ---
+% Personaliza el estilo de los encabezados y pies usando fancyhdr
+\pagestyle{fancy}           % Usa el estilo 'fancy' para encabezados/pies
+\fancyhf{}                  % Limpia encabezados y pies por defecto
+\fancyhead[L]{ENCABEZADO}   % Texto a la izquierda del encabezado
+\fancyhead[R]{\thepage}     % Texto a la derecha del encabezado
+\fancyfoot[C]{\leftmark}    % Texto al centro del pie
+\setlength{\headheight}{14.5pt} % Altura del encabezado (evita warnings)
+
+% -----------------------------
+% Títulos de sección y subsección
+% -----------------------------
+% --- Configuración para titlesec ---
+% Modifica el formato de los títulos usando titlesec
+	\titleformat{\section}
+    {\bfseries\large}      % Título de sección en negrita y grande
+    {\thesection. }        % Número de sección seguido de punto
+    {0pt}{}                % Espacio entre número y título
+	\titleformat{\subsection}
+    {\bfseries}            % Título de subsección en negrita
+    {\thesubsection. }     % Número de subsección seguido de punto
+    {0pt}{}                % Espacio entre número y título
+
+% -----------------------------
+% Hipervínculos y PDF
+% -----------------------------
+% --- Configuración para hyperref ---
+% Habilita enlaces en el PDF, define sus colores y propiedades
+\hypersetup{
+    colorlinks=true,      % Activa el color en los enlaces en vez de recuadros
+    linkcolor=magenta,    % Color de los enlaces internos (índice, referencias)
+    filecolor=magenta,    % Color de los enlaces a archivos
+    urlcolor=magenta,     % Color de los enlaces a URLs externas
+    pdftitle={Documento}, % Título del documento en las propiedades del PDF
+    pdfpagemode=UseOutlines, % Abre el PDF mostrando el panel de marcadores
+}
+
+% -----------------------------
+% Imágenes y figuras
+% -----------------------------
+% --- Configuración para graphicx ---
+% Carpeta predeterminada para imágenes
+\graphicspath{{figures/}} % Busca imágenes en la carpeta 'figures'
+
+% --- Configuración para caption ---
+% Personaliza el formato de los títulos de figuras y tablas
+\captionsetup{
+    font=small,             % Tamaño de fuente para captions
+    labelfont=bf,           % Etiqueta (Figura, Tabla) en negrita
+    justification=centering % Centra el texto del caption
+}
+
+% --- Configuración para float ---
+% Permite forzar la posición exacta de figuras/tablas con [H]
+% No requiere configuración adicional, pero puedes definir estilos si lo deseas
+
+% -----------------------------
+% Tablas
+% -----------------------------
+% (Puedes agregar configuraciones para booktabs, array, multirow, multicol si lo necesitas)
+
+% -----------------------------
+% Código fuente y pseudocódigo
+% -----------------------------
+% --- Configuración para listings (código fuente) ---
+% Personaliza el estilo de los bloques de código
+\lstset{
+    basicstyle=\ttfamily\small,     % Fuente monoespaciada y tamaño pequeño
+    numbers=left,                   % Números de línea a la izquierda
+    numberstyle=\tiny,              % Estilo de los números de línea
+    frame=single,                   % Marco alrededor del código
+    breaklines=true,                % Rompe líneas largas automáticamente
+    backgroundcolor=\color{gray!10},    % Fondo gris claro
+    keywordstyle=\color{blue}\bfseries, % Palabras clave en azul y negrita
+    commentstyle=\color{green!60!black}\itshape,    % Comentarios en verde y cursiva
+    stringstyle=\color{red},        % Cadenas en rojo
+}
+
+% --- Configuración para algorithm2e (pseudocódigo) ---
+% Personaliza el estilo de los algoritmos
+\SetKwInput{KwData}{Datos}      % Renombra 'Input' a 'Datos'
+\SetKwInput{KwResult}{Resultado} % Renombra 'Output' a 'Resultado'
+\SetNlSty{textbf}{(}{)}         % Estilo para los números de línea
+
+% -----------------------------
+% Recuadros y colores
+% -----------------------------
+% --- Configuración para tcolorbox ---
+% Define estilos para recuadros de colores
+\tcbset{
+    colback=blue!5!white,        % Fondo azul claro
+    colframe=blue!80!black,      % Borde azul oscuro
+    boxrule=0.8pt,               % Grosor del borde
+    arc=4pt,                     % Bordes redondeados
+    auto outer arc,              % Redondea también el borde exterior
+}
+
+% --- Configuración para xcolor ---
+% Define colores personalizados
+\definecolor{myred}{RGB}{220, 50, 47}    % Rojo personalizado
+\definecolor{myblue}{RGB}{38, 139, 210}  % Azul personalizado
+
+% -----------------------------
+% Interlineado y espaciado
+% -----------------------------
+% --- Configuración para setspace ---
+% Controla el interlineado del documento
+% \singlespacing     % Interlineado sencillo
+% \onehalfspacing    % Interlineado 1.5
+% \doublespacing     % Interlineado doble
+
+% --- Configuración de espaciado general ---
+\setlength{\parskip}{1em}           % Espacio entre párrafos
+\setlength{\parindent}{1.5em}       % Sangría al inicio de cada párrafo
+\setlength\emergencystretch{3em}    % Estira líneas para evitar desbordes
+
+% -----------------------------
+% Notas al pie
+% -----------------------------
+% --- Configuración para footmisc ---
+% Personaliza las notas al pie
+\renewcommand{\thefootnote}{\fnsymbol{footnote}} % Usa símbolos en vez de números
+
+% -----------------------------
+% Bibliografía
+% -----------------------------
+% --- Configuración para biblatex ---
+% Archivo de bibliografía y opciones adicionales
+\addbibresource{referencias.bib}    % Archivo de bibliografía para biblatex
+% \ExecuteBibliographyOptions{sorting=none, maxnames=4} % Ejemplo: sin orden y máximo 4 autores

@@ -2,22 +2,22 @@
 
 \subsection{tcolorbox}
 
-\hspace{1cm}
-\begin{tcolorbox}[
-    colback=blue!10, 
-    colframe=blue!60, 
-    coltitle=black, 
-    title={Título del Recuadro}, 
-    fonttitle=\bfseries, 
-    boxrule=1mm, 
-    arc=4mm, 
-    left=2mm, 
-    right=2mm, 
-    top=2mm, 
-    bottom=2mm
-]
+\begin{tcolorbox}
     Aquí puedes agregar texto destacado, observaciones importantes, 
     retroalimentación, notas especiales o cualquier contenido que 
     necesite ser resaltado visualmente en el documento.
 \end{tcolorbox}
-\hspace{1cm}
+
+% Ejemplo más elaborado con título y parámetros personalizados
+\begin{tcolorbox}[%
+    title={Ejemplo con Título},     % Título que aparece en la parte superior del recuadro
+    colback=yellow!10,              % Color de fondo del recuadro (amarillo claro)
+    colframe=orange!80!black,       % Color del borde del recuadro (naranja oscuro)
+    fonttitle=\bfseries,            % Fuente del título (negrita)
+    coltitle=black,                 % Color del texto del título
+    boxrule=1pt,                    % Grosor del borde
+    arc=6pt                         % Radio de los bordes redondeados
+]
+    Este recuadro tiene un título, colores personalizados y bordes redondeados.
+    Puedes modificar los parámetros para resaltar información específica.
+\end{tcolorbox}
