@@ -1,4 +1,4 @@
-% === Ejemplos de referencia ===
+% === Ejemplos de referencia para biblatex ===
 
 % Ejemplo de libro
 @book{knuth1984,
@@ -8,30 +8,22 @@
   publisher = {Addison-Wesley}
 }
 
-% Ejemplo de artículo científico
-@article{lamport1994,
-  author  = {Leslie Lamport},
-  title   = {LaTeX: A Document Preparation System},
-  journal = {Computer Science Press},
-  year    = {1994}
-}
-
 % Ejemplo de recurso web
-@misc{latexweb,
-  author       = {Overleaf},
-  title        = {Documentación de Overleaf},
-  year         = {2020},
-  howpublished = {\url{https://www.overleaf.com/learn}},
-  note         = {Accedido en julio 2025}
+@online{latexweb,
+  author  = {{Overleaf}},
+  title   = {Documentación de Overleaf},
+  year    = {2025},
+  url     = {https://www.overleaf.com/learn},
+  urldate = {2026-04-25}
 }
 
 % Ejemplo de repositorio en GitHub
-@misc{githubRepo,
-  author       = {Nombre del autor o equipo},
-  title        = {Título del proyecto o repositorio},
-  year         = {AÑO},
-  howpublished = {\url{https://github.com/usuario/repositorio}},
-  note         = {Repositorio GitHub. Accedido en MES de AÑO}
+@online{githubRepo,
+  author  = {{Nombre del autor o equipo}},
+  title   = {Título del proyecto o repositorio},
+  year    = {2026},
+  url     = {https://github.com/usuario/repositorio},
+  urldate = {2026-04-25}
 }
 
 % Ejemplo de informe técnico
@@ -41,17 +33,17 @@
   institution = {Institución},
   year        = {2021},
   number      = {TR-2021-01},
-  note        = {Informe técnico}
+  type        = {Informe técnico}
 }
 
 % Ejemplo de tesis
-% Si es de maestria usar `mastersthesis`
+% Si es de maestria usar @mastersthesis
 @phdthesis{phdthesis2022,
   author      = {Autor de la tesis},
   title       = {Título de la tesis},
   school      = {Universidad},
   year        = {2022},
-  note        = {Tesis}
+  type        = {Tesis doctoral}
 }
 
 % Puedes eliminar estas entradas o reemplazarlas.
