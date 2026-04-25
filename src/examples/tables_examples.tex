@@ -28,3 +28,20 @@
   B & 2 \\
   \bottomrule
 \end{tabular}
+
+\subsubsection{Tabla con tabularx}
+
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{0.85\textwidth}{lXr}
+        \toprule
+        Concepto & Descripcion & Estado \\
+        \midrule
+        \LaTeX{} & Permite escribir documentos tecnicos con formato profesional. & Listo \\
+        tabularx & Ajusta automaticamente el ancho de las columnas para aprovechar mejor la pagina. & Activo \\
+        build-tools & Agrupa el Makefile y el script de verificacion para compilar en Linux. & Listo \\
+        \bottomrule
+    \end{tabularx}
+    \caption{Ejemplo de tabla flexible usando tabularx}
+    \label{tab:tabularx-ejemplo}
+\end{table}
