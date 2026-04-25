@@ -1,0 +1,81 @@
+
+% Idioma principal del documento.
+\selectlanguage{spanish}
+
+% Margenes de pagina (ajusta estos valores segun tu formato).
+\geometry{
+    top=2.5cm,
+    bottom=2cm,
+    left=2.5cm,
+    right=2cm,
+    bindingoffset=0.5cm,
+    heightrounded,
+}
+
+% Encabezado y pie de pagina personalizados.
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{ENCABEZADO}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{\leftmark}
+\setlength{\headheight}{14.5pt}
+
+
+% Enlaces del PDF (indice, URLs y metadatos).
+\hypersetup{
+    colorlinks=true,
+    linkcolor=magenta,
+    filecolor=magenta,
+    urlcolor=magenta,
+    pdftitle={Documento},
+    pdfpagemode=UseOutlines,
+}
+
+% Carpeta por defecto para imagenes.
+\graphicspath{{figures/}}
+
+% Estilo de captions en figuras y tablas.
+\captionsetup{
+    font=small,
+    labelfont=bf,
+    justification=centering,
+}
+
+% Estilo base para bloques de codigo con listings.
+\lstset{
+    basicstyle=\ttfamily\small,
+    numbers=left,
+    numberstyle=\tiny,
+    frame=single,
+    breaklines=true,
+    backgroundcolor=\color{gray!10},
+    keywordstyle=\color{blue}\bfseries,
+    commentstyle=\color{green!60!black}\itshape,
+    stringstyle=\color{red},
+}
+
+% Traduccion de etiquetas del pseudocodigo (algorithm2e).
+\SetKwInput{KwData}{Datos}
+\SetKwInput{KwResult}{Resultado}
+\SetNlSty{textbf}{(}{)}
+
+% Estilo por defecto para tcolorbox.
+\tcbset{
+    colback=blue!5!white,
+    colframe=blue!80!black,
+    boxrule=0.8pt,
+    arc=4pt,
+    auto outer arc,
+}
+
+% Colores de apoyo para usar en texto, tablas o cajas.
+\definecolor{myred}{RGB}{220,50,47}
+\definecolor{myblue}{RGB}{38,139,210}
+
+% Espaciado entre parrafos y control de desbordes.
+\setlength{\parskip}{1em}
+\setlength{\parindent}{1.5em}
+\setlength{\emergencystretch}{3em}
+
+% Archivo de referencias bibliograficas.
+\addbibresource{referencias.bib}

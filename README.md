@@ -35,29 +35,22 @@ Template para crear informes académicos y técnicos en LaTeX
 
 ```
 Template_Informe/
-├── anexos.tex                # 📎 Sección de anexos
-├── aux/                      # 📂 Archivos auxiliares y PDF generado (se crea al compilar con `make`, no está en el repo)
-├── config.tex                # ⚙️ Configuración de paquetes y estilos
-├── examples/                 # 📂 Ejemplos de uso de entornos y comandos
-│   ├── anotaciones_examples.tex
-│   ├── code_examples.tex
-│   ├── figures_examples.tex
-│   ├── lists_examples.tex
-│   ├── math_examples.tex
-│   ├── references_examples.tex
-│   ├── tables_examples.tex
-│   └── tcolorbox_examples.tex
-├── figures/                  # 🖼️ Carpeta para figuras e imágenes
-│   └── udec_logo.png         # 🎓 Logo de la universidad
+├── build/                    # 📂 Salida de compilación (PDF y auxiliares)
+├── build-tools/              # ⚙️ Makefile y script de verificación Linux
+│   ├── Makefile
+│   └── check_linux_requirements.sh
 ├── LICENSE                   # 📄 Licencia del proyecto
-├── main.tex                  # 📄 Archivo principal con configuración
-├── Makefile                  # ⚙️ Automatización de compilación
-├── packages.tex              # 📦 Paquetes y configuraciones de LaTeX
-├── portada.tex               # 🏠 Portada personalizable del informe
 ├── README.md                 # 📋 Documentación del template
-├── referencias.bib           # 📚 Bibliografía en formato BibTeX
-├── resumen.tex               # 📝 Resumen del informe
-└── seccion.tex               # 📖 Sección de ejemplo
+└── src/                      # 🧩 Código fuente del informe
+    ├── anexos.tex
+    ├── config.tex
+    ├── examples/
+    ├── figures/
+    ├── main.tex
+    ├── packages.tex
+    ├── portada.tex
+    ├── referencias.bib
+    └── Secciones/
 ```
 
 ## Compilación en Linux
@@ -70,31 +63,31 @@ sudo apt install texlive-full
 
 ### Usando Makefile
 
-Puedes compilar y limpiar el proyecto fácilmente usando el Makefile:
+Puedes compilar y limpiar el proyecto usando el Makefile de `build-tools`:
 
 Para compilar el PDF:
 ```bash
-make
+make -C build-tools
 ```
-El PDF generado estará en la carpeta `aux/` como `informe.pdf`.
+El PDF generado estará en la carpeta `build/` como `informe.pdf`.
 
 Para mostrar los `Warning` y `Error`:
 
 ```bash
-make log
+make -C build-tools log
 ```
 
 Para eliminar los archivos auxiliares:
 ```bash
-make clean
+make -C build-tools clean
 ```
 Esto dejará solo el PDF y los archivos fuente.
 
 Para abrir el PDF generado directamente:
 ```bash
-make open
+make -C build-tools open
 ```
-Esto abrirá el archivo `aux/informe.pdf` con el visor predeterminado de tu sistema.
+Esto abrirá el archivo `build/informe.pdf` con el visor predeterminado de tu sistema.
 
 **Nota:** Las reglas del Makefile (`all`, `clean`, `open`) están declaradas como `.PHONY`, lo que significa que no dependen de archivos y pueden ejecutarse en cualquier momento.
 
@@ -102,29 +95,29 @@ Esto abrirá el archivo `aux/informe.pdf` con el visor predeterminado de tu sist
 
 Compilar el PDF:
 ```bash
-latexmk -pdf -jobname=informe -outdir=aux main.tex
+cd src && latexmk -pdf -jobname=informe -outdir=../build main.tex
 ```
 
 Mostrar los `Warning` y `Error`:
 ```bash
-grep "Warning" ./aux/informe.log || true
-grep "Error" ./aux/informe.log || true
+grep "Warning" ./build/informe.log || true
+grep "Error" ./build/informe.log || true
 ```
 
 Eliminar los archivos auxiliares:
 ```bash
-latexmk -C -outdir=aux
+rm -rf build
 ```
 
 Abrir el PDF generado:
 ```bash
-xdg-open aux/informe.pdf
+xdg-open build/informe.pdf
 ```
 
 
 ## 📝 Personalización y Paquetes
 
-Para detalles sobre los paquetes utilizados y cómo personalizar el documento, revisa los archivos `packages.tex` y `config.tex`. Allí encontrarás todas las configuraciones y opciones disponibles para modificar el estilo, márgenes, encabezados, colores, bibliografía, etc.
+Para detalles sobre los paquetes utilizados y cómo personalizar el documento, revisa los archivos `src/packages.tex` y `src/config.tex`. Allí encontrarás todas las configuraciones y opciones disponibles para modificar el estilo, márgenes, encabezados, colores, bibliografía, etc.
 
 Las importaciones incluidas en el template cubren áreas como:
 - Matemáticas y símbolos
