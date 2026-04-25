@@ -10,13 +10,13 @@ Template_Informe/
 └── src/                      # Código fuente del informe
     ├── anexos.tex
     ├── config.tex
-    ├── examples/
-    ├── figures/
+    ├── examples/             # Ejemplos de uso de entornos y comandos
+    ├── figures/              # Imágenes y recursos gráficos del informe
     ├── main.tex
     ├── packages.tex
     ├── portada.tex
     ├── referencias.bib
-    └── Secciones/
+    └── Secciones/            # Secciones principales del informe
 ```
 
 `src/main.tex` es el archivo que une portada, secciones, bibliografía y anexos. Si creas una sección nueva, debes agregarla ahí con `\include{...}` o `\input{...}`.
