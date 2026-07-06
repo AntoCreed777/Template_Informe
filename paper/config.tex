@@ -1,0 +1,22 @@
+% Capa compartida de configuracion para todas las variantes.
+\input{../shared/config_common}
+
+% Margenes de pagina (ajusta estos valores segun tu formato).
+\geometry{
+    top=2cm,
+    bottom=2cm,
+    left=1.8cm,
+    right=1.8cm
+}
+
+% Encabezado y pie de pagina personalizados.
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{titulo del documento}
+\fancyhead[R]{\thepage}
+
+% Sobrescribe metadatos PDF para el template paper.
+\hypersetup{pdftitle={titulo del documento}}
+
+\setlength{\droptitle}{-2cm}
+\setlength{\parindent}{15pt}

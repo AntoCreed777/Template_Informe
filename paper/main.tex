@@ -1,0 +1,32 @@
+\documentclass[10pt,twocolumn]{article}
+
+\input{packages}
+\input{config}
+
+\input{titulo}
+
+\begin{document}
+    \maketitle
+
+    % ============================================================
+    \input{secciones/resumen}
+    \input{secciones/introduccion}
+
+    % Cuerpo del documento (secciones principales).
+    
+    \input{secciones/conclusiones}
+
+    % ============================================================
+    %\clearpage
+    \nocite{*}
+
+    \printbibliography[
+        heading=bibintoc,
+        title={Bibliografía}
+    ]
+
+    % ============================================================
+    \appendix
+
+    \input{anexos/ejemplo}
+\end{document}

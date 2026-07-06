@@ -2,9 +2,17 @@
 
 Para adaptar el template a cada informe, normalmente solo necesitas tocar estos archivos:
 
+## 0. Elegir template
+
+Este repositorio incluye dos variantes:
+- `informe/`: formato de informe tradicional.
+- `paper/`: formato de paper en dos columnas.
+
+Los archivos a editar dependen del template que elijas.
+
 ## 1. Portada
 
-Edita [src/portada.tex](../src/portada.tex) para cambiar:
+Edita [informe/portada.tex](../informe/portada.tex) (informe) o [paper/titulo.tex](../paper/titulo.tex) (paper) para cambiar:
 - título
 - subtítulo
 - autores
@@ -14,11 +22,15 @@ Edita [src/portada.tex](../src/portada.tex) para cambiar:
 
 ## 2. Contenido principal
 
-Edita o reemplaza los archivos dentro de [src/Secciones](../src/Secciones) para escribir el cuerpo del informe. Si agregas secciones nuevas, también debes incluirlas desde [src/main.tex](../src/main.tex) con `\include{...}` o `\input{...}`.
+Edita o reemplaza:
+- [informe/Secciones](../informe/Secciones) para el template de informe.
+- [paper/secciones](../paper/secciones) para el template de paper.
+
+Si agregas secciones nuevas, incluyelas desde [informe/main.tex](../informe/main.tex) o [paper/main.tex](../paper/main.tex) con `\include{...}` o `\input{...}`.
 
 ## 3. Configuración visual
 
-Usa [src/config.tex](../src/config.tex) para ajustar:
+Usa [informe/config.tex](../informe/config.tex) o [paper/config.tex](../paper/config.tex) para ajustar:
 - márgenes
 - encabezados y pies
 - imágenes por defecto
@@ -27,28 +39,29 @@ Usa [src/config.tex](../src/config.tex) para ajustar:
 
 ## 4. Paquetes
 
-Usa [src/packages.tex](../src/packages.tex) si necesitas:
+Usa [informe/packages.tex](../informe/packages.tex) o [paper/packages.tex](../paper/packages.tex) si necesitas:
 - añadir paquetes nuevos
 - quitar paquetes que no usarás
 - cambiar opciones de bibliografía, tablas o código
 
 ## 5. Bibliografía
 
-Agrega tus referencias en [src/referencias.bib](../src/referencias.bib) y cita con `\cite{clave}`.
+Agrega tus referencias en [informe/referencias.bib](../informe/referencias.bib) o [paper/referencias.bib](../paper/referencias.bib) y cita con `\cite{clave}`.
 
 ## 6. Ejemplos
 
-Los archivos dentro de [src/examples](../src/examples) sirven como guía. Puedes borrarlos o reemplazarlos cuando ya no los necesites.
+Los archivos dentro de [informe/examples](../informe/examples) sirven como guia. Puedes borrarlos o reemplazarlos cuando ya no los necesites.
 
 ## Flujo recomendado
 
 1. Duplica el template.
-2. Cambia la portada.
-3. Escribe el contenido en `Secciones/` y enlázalo desde `src/main.tex`.
-4. Ajusta estilo y paquetes si hace falta.
-5. Completa la bibliografía.
-6. Compila con `make -C build-tools`.
+2. Elige `informe/` o `paper/`.
+3. Cambia la portada o titulo segun el template elegido.
+4. Escribe el contenido en la carpeta de secciones correspondiente y enlazalo desde su `main.tex`.
+5. Ajusta estilo y paquetes si hace falta.
+6. Completa la bibliografia.
+7. Compila con `make -C build-tools` (informe) o `make -C build-tools TEMPLATE=paper`.
 
 ## Alternativa sin Linux
 
-Si no quieres usar la compilación local, puedes copiar el contenido de `src/` a un proyecto nuevo en Overleaf. Overleaf es un editor y compilador de LaTeX en la web, así que sirve como alternativa válida para Windows, macOS o cualquier sistema con navegador.
+Si no quieres usar la compilacion local, puedes copiar `informe/` o `paper/` a un proyecto nuevo en Overleaf. Overleaf es un editor y compilador de LaTeX en la web, asi que sirve como alternativa valida para Windows, macOS o cualquier sistema con navegador.

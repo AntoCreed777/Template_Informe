@@ -1,25 +1,7 @@
+% Configuracion compartida entre variantes de template.
 
 % Idioma principal del documento.
 \selectlanguage{spanish}
-
-% Margenes de pagina (ajusta estos valores segun tu formato).
-\geometry{
-    top=2.5cm,
-    bottom=2cm,
-    left=2.5cm,
-    right=2cm,
-    bindingoffset=0.5cm,
-    heightrounded,
-}
-
-% Encabezado y pie de pagina personalizados.
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{ENCABEZADO}
-\fancyhead[R]{\thepage}
-\fancyfoot[C]{\leftmark}
-\setlength{\headheight}{14.5pt}
-
 
 % Enlaces del PDF (indice, URLs y metadatos).
 \hypersetup{
@@ -72,9 +54,7 @@
 \definecolor{myred}{RGB}{220,50,47}
 \definecolor{myblue}{RGB}{38,139,210}
 
-% Espaciado entre parrafos y control de desbordes.
-\setlength{\parskip}{1em}
-\setlength{\parindent}{1.5em}
+% Espaciado para reducir desbordes.
 \setlength{\emergencystretch}{3em}
 
 % Archivo de referencias bibliograficas.

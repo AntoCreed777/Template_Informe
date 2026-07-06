@@ -5,9 +5,9 @@ Overleaf es un editor y compilador de LaTeX en la web. Es útil si no usas Linux
 ## Cómo usar este template allí
 
 1. Crea un proyecto nuevo en Overleaf.
-2. Copia el contenido de `src/` dentro del proyecto.
+2. Copia el contenido de `informe/` o `paper/` dentro del proyecto.
 3. Mantén la estructura de carpetas para que funcionen `\input{...}` y `\include{...}`.
-4. Sube también las imágenes que uses en `src/figures/`.
+4. Sube tambien las imagenes que uses en `figures/`.
 5. Selecciona `main.tex` como archivo principal.
 
 ## Por qué es una alternativa válida

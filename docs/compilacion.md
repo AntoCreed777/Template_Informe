@@ -26,11 +26,26 @@ Desde la raíz del proyecto:
 make -C build-tools
 ```
 
+Eso compila el template `informe` por defecto.
+
+Para compilar `paper`:
+
+```bash
+make -C build-tools TEMPLATE=paper
+```
+
 También puedes entrar a la carpeta y ejecutar los comandos desde ahí:
 
 ```bash
 cd build-tools
 make
+```
+
+O para paper:
+
+```bash
+cd build-tools
+make TEMPLATE=paper
 ```
 
 ## Ver el log
@@ -74,4 +89,7 @@ make open
 
 ## Estructura de salida
 
-La compilación genera el PDF y los archivos auxiliares en `build/`.
+La compilacion genera el PDF y los archivos auxiliares en `build/`.
+
+- `make -C build-tools` genera `build/informe.pdf`.
+- `make -C build-tools TEMPLATE=paper` genera `build/paper.pdf`.
